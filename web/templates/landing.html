@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center bg-light">
+    <!-- Site Branding -->
+    <div class="text-center mb-5">
+        <h1 class="display-4 text-primary fw-bold">DiceyDecisions</h1>
+        <p class="lead text-secondary">Let your friends vote. You decide wisely.</p>
+    </div>
+
+    <!-- Info Section -->
+    <div class="row mb-4 w-75">
+        <div class="col-md-6">
+            <div class="card shadow-sm p-4 text-center">
+                <h4 class="text-dark">Create Decision Rooms</h4>
+                <p>Create rooms where friends or teams can submit options for any decision.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm p-4 text-center">
+                <h4 class="text-dark">Vote Anonymously</h4>
+                <p>Each participant casts their vote without influence. Fair and simple.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="text-center">
+        <a href="{{ url_for('login_page') }}" class="btn btn-primary btn-lg me-3">Login</a>
+        <a href="{{ url_for('register_page') }}" class="btn btn-outline-secondary btn-lg">Sign Up</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5 text-muted small text-center">
+        <p>&copy; {{ current_year }} DiceyDecisions. Built to simplify group decisions.</p>
+    </footer>
+</div>
+{% endblock %}

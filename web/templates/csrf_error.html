@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSRF Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .error-box {
+            padding: 20px;
+            background-color: #ffdddd;
+            border: 1px solid #ff0000;
+            display: inline-block;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-box">
+        <h2>CSRF Token Error</h2>
+        <p>Oops! Something went wrong with the request.</p>
+        <p><strong>Reason:</strong> {{ reason }}</p>
+        <a href="/">Go Back Home</a>
+    </div>
+</body>
+</html>

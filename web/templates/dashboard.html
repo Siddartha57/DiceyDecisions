@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid">
+    <!-- Dashboard Header -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2 class="text-primary">Welcome, {{ current_user.username }}!</h2>
+            <p class="text-muted">Here’s your active rooms overview.</p>
+        </div>
+    </div>
+
+    <!-- Active Rooms Section -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm border-light rounded">
+                <div class="card-body">
+                    <h5 class="card-title">Active Rooms</h5>
+                    {% if active_rooms %}
+                        <ul class="list-group">
+                            {% for room in active_rooms %}
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span>{{ room.title }}</span>
+                                    <a href="{{ url_for('room_detail', room_code=room.room_code) }}" class="btn btn-primary btn-sm">View Room</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p class="text-muted">You don't have any active rooms at the moment.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Link to Create a New Room -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-sm border-light rounded">
+                <div class="card-body text-center">
+                    <h5 class="card-title">No Active Rooms?</h5>
+                    <p class="card-text">Create a new decision room and start a new poll with your friends.</p>
+                    <a href="{{ url_for('create_room') }}" class="btn btn-success">Create New Room</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
