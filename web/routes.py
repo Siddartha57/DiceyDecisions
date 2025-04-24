@@ -39,7 +39,7 @@ def register_page():
             db.session.add(new_user)
             db.session.commit()
         flash('Registerd Successfully','success')     
-        return base()
+        return login_page()
     return render_template('register.html',form=form)
 
 
